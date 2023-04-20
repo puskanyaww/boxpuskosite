@@ -1,0 +1,301 @@
+@font-face {
+    font-family: Bahnschrift; /* Шрифтик который типо ExoBold.ttf */
+    src: url(BAHNSCHRIFT-1.woff); /* бебра */
+   }
+   @font-face {
+       font-family: Bahnschrift;
+       src: url(BAHNSCHRIFT-1.woff);
+   }
+   body {
+    font-family: BAHNSCHRIFT;
+   text-align: center;
+   background: url(https://trgu.ru/resources/pesok-volnami-melkiy-priroda2.png);
+   background-attachment: fixed;
+   background-size: 100%;
+   padding: 0;
+   margin:0;
+   }
+   button {
+       font-family: Bahnschrift;
+       background-color: #101010;
+       border: none;
+       outline: none;
+       padding: 5px 19px;
+       border-radius: 5px;
+       width: 1000px;
+       height: 500px;
+       margin-left: 10px;
+       cursor: pointer;
+       top: 60px;
+       font-size: 500%;
+       color: aliceblue;
+   }
+   .logo {
+       height: 200px;
+   }
+   .content {
+       background-color: #e1e1e1;
+       display: flex;
+       padding: 20px;
+       text-align: center;
+   }
+   a {
+       font-family: Bahnschrift;
+       color:rgb(0, 85, 255);
+       text-decoration: none;
+   }
+   .logocolontitle {
+       background-color: #9C824B;
+       padding: 10px;
+       height: 50px;
+       position: fixed;
+       width: 100%;
+       z-index: 100;
+       box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+   }
+   .speciallogo {
+       width: 60px;
+       margin-right: 100%;
+       margin-top: -11px;
+   }
+   .speciallogo3 {
+    width: 200px;
+    margin-bottom: -28px;
+    border-right: 25%;
+}
+   .contentx {
+       background-color: #000000;
+       display: block;
+       padding: 20px;
+   }
+   .contentxx {
+    display:flow-root;
+    padding: 20px;
+}
+.contentxxx {
+ display: float;
+ padding: 20px;
+}
+   .whitecolor {
+       color: aliceblue;
+   }
+   .pustoyblock {
+       width: 100%;
+       height: 400px;
+   }
+   .pustoyblockmini {
+       width: 100%;
+       height: 100px;
+   }
+   .pustoyblockminiminimini {
+    width: 100%;
+    height: 10px;
+}
+   .pustoyblockminimini {
+    width: 100%;
+    height: 50px;
+}
+   .drawfulbg {
+       background-image: url(../image/14.svg);
+   }
+   @media (max-width:950px){
+       .content {
+           display: block;
+       }
+       
+       .speciallogo {
+           width: 250px;
+       }
+
+       .imgmainspw {
+        width: 100%;
+      }
+       button {
+           font-family: Bahnschrift;
+           background-color: #101010;
+           border: none;
+           outline: none;
+           padding: 5px 19px;
+           border-radius: 5px;
+           width: 340px;
+           height: 200px;
+           margin-left: 10px;
+           cursor: pointer;
+           top: 60px;
+           color: aliceblue;
+           font-size: 65%;
+       }
+       .pustoyblocklast {
+           width: 100%;
+           background-color: #0000006e;
+           position: relative;
+           height: 20vh;
+       }
+   
+   }
+   button:hover {
+       background-color: #454545;
+   
+   }
+   .imgmainspw {
+    width: 15%;
+  }
+   .info {
+       width: 100%;
+       background-color: #e9e9e9;
+       padding: 20px 25px 20px 25px;
+   }
+   .tabooimage {
+       height: 300px;
+   }
+   .footer {
+       width: 100%;
+       height: 50px;
+       background-color: #9C824B;
+       position: absolute;
+   }
+   .pustoyblocklast {
+       width: 100%;
+       background-color: #0000006e;
+       position: relative;
+       height: 50vh;
+   }
+   @media (max-width:667px){
+       .content {
+           display: block;
+       }
+       .imgmainspw {
+        width: 100%;
+      }
+       .speciallogo {
+           width: 250px;
+       }
+       .pustoyblocklast {
+           width: 100%;
+           background-color: #0000006e;
+           position: relative;
+           height: 15vh;
+       }
+       
+   
+   }
+   
+   #slider {
+       position: relative;
+       text-align: center;
+       top: 10px;
+   }
+   
+   #slider{
+       margin: 0 auto;
+   }
+   
+   #slider article{
+       width: 20%;
+       float: left;
+   }
+   
+   #slides .image {
+       width: 50%;
+       line-height: 0;
+   }
+   
+   #ovwerflow {
+       width: 100%;
+       overflow: hidden;    
+   }
+   
+   article img {
+       width: 100%;
+   }
+   
+   #desktop:checked ~ #slider {
+       max-width: 960px;
+   }
+   
+   .search {
+       font-family: FuturaFuturisC;
+       src: url(FuturaFuturisC-Bold.otf);
+       border-radius: 50px;
+       width: 55%;
+       height: 60px;
+       background-color: #ececec;
+       text-align: center;
+       font-size: large;
+   
+   }
+
+   h2 {
+    font-family: Bahnschrift;
+   }
+
+   footer{
+    position: fixed;
+    background-color: #000000;
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+    float: left;
+    bottom: 0;
+   }
+
+   .aimg{
+    padding: 15px;
+    border-radius: 15px;
+    animation-duration: 0.25s;
+    animation-name: opacitydown;
+    filter: brightness(100%);
+   }
+   .aimg:hover{
+    animation-duration: 0.25s;
+    animation-name: opacityup;
+    filter: brightness(80%);
+   }
+
+   @keyframes opacityup {
+    from {
+        filter: brightness(100%);
+    }
+  
+    to {
+        filter: brightness(80%);
+    }
+  }
+  @keyframes opacitydown {
+    from {
+        filter: brightness(80%);
+    }
+  
+    to {
+        filter: brightness(100%);
+    }
+  }
+
+  .ssdr{
+    color: #840000;
+    width: 100%;
+  }
+
+  .state{
+    background-color: #f0f0f0;
+    width: 70%;
+    text-align: left;
+    margin-left: 15%;
+  }
+  .statep{
+    font-family: Arial;
+    padding-left: 3%;
+    font-size: 80%;
+    line-height: 0.9em;
+    padding-bottom: 1%;
+  }
+  .stateh1{
+    color: #0077ff;
+    font-family: Arial;
+    padding-left: 3%;
+    font-size: 120%;
+    line-height: 0.9em;
+    padding-top: 2%;
+  }
+
+   
