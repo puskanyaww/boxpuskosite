@@ -1,0 +1,49 @@
+@font-face {
+    font-family: main;
+    src: url(Gilroy-Medium.ttf);
+   }
+
+body{
+    padding:0;
+    margin:0;
+    font-family: main;
+}
+.one{
+    position:fixed;
+    width:50%;
+    background-color:#101010;
+    min-height: 100vh;
+    text-align: center;
+    padding-top:24%;
+    padding-bottom:50%;
+}
+.two{
+    position:fixed;
+    margin-left:50%;
+    width:50%;
+    background-color:#ffffff;
+    min-height: 100vh;
+    text-align: center;
+    padding-top:24%;
+    padding-bottom:50%;
+}
+img{
+    width:70%; 
+    transition-property: width;
+    transition-duration: 500ms;
+    transition-timing-function: ease;
+}
+img:hover{
+    width:80%;
+}
+.prefer{
+    position: fixed;
+    background-color: #f4f4f4;
+    color: #000000;
+    padding-top:2%;
+    padding-bottom:2%;
+    text-align: center;
+    margin:0;
+    z-index: 4;
+    width: 100%;
+}
