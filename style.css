@@ -1,0 +1,130 @@
+@font-face {
+    font-family: Montserrat;
+    src: url(font/Montserrat-Regular.ttf);
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: Montserrat;
+    src: url(font/Montserrat-Medium.ttf);
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: Montserrat;
+    src: url(font/Montserrat-SemiBold.ttf);
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: Montserrat;
+    src: url(font/Montserrat-Bold.ttf);
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: Montserrat;
+    src: url(font/Montserrat-ExtraBold.ttf);
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: Montserrat;
+    src: url(font/Montserrat-Light.ttf);
+    font-weight: 200;
+}
+
+@font-face {
+    font-family: Montserrat;
+    src: url(font/Montserrat-Thin.ttf);
+    font-weight: 100;
+}
+
+body{
+    font-family: Montserrat;
+    display: flex;
+    margin-right: auto;
+    margin-left: auto;
+    width: 60%;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    max-width: 800px;
+    transition: width .3s ease-in-out;
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+}
+
+.header img{
+    max-width: 70px;
+}
+
+input{
+    border:  solid 2px #000000;
+    font-weight: 700;
+    font-size: 100%;
+    border-radius: 10px;
+    font-family: Montserrat;
+    padding: 15px;
+    color: #000;
+}
+
+#content{
+display: flex;
+flex-direction: column;
+gap: 10px;
+padding: 20px;
+outline: #000 3px solid;
+box-shadow: 0px 10px 0px #000000a2;
+border-radius: 10px;
+}
+
+button{
+    border:  solid 2px #a3a3a3;
+    font-weight: 700;
+    font-size: 100%;
+    border-radius: 10px;
+    font-family: Montserrat;
+    background-color: #000000;
+    padding: 15px;
+    color: #ffffff;
+    cursor: pointer;
+    transition: transform .2s ease-in-out;
+}
+
+button:hover{
+    transform: translateY(-3px);
+}
+
+.longName{
+    display: block;
+}
+
+.shortName{
+    display: none;
+}
+
+h3{
+    margin-top: 10px;
+    font-size: 130%;
+}
+
+@media screen and (max-width: 600px) and (-webkit-min-device-pixel-ratio: 1){
+    body{
+        width: calc(100% - 40px);
+        height: 100%;
+    }
+}
+
+@media screen and (max-width: 370px) and (-webkit-min-device-pixel-ratio: 1){
+    .shortName{
+        display: block;
+    }
+    
+    .longName{
+        display: none;
+    }
+}
