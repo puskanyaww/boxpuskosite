@@ -1,4 +1,4 @@
-const socket = io("ws://trgu.ru:4020", {transports: ['websocket', 'polling', 'flashsocket']});
+const socket = io("wss://trgu.ru:4020", {transports: ['websocket', 'polling', 'flashsocket']});
 
 let id;
 
