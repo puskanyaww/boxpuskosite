@@ -12,7 +12,8 @@ let localization = {
     "errors":{
             ROOM_NOT_FOUND:"Комната не найдена",
             GAME_STARTED:"Игра уже началась",
-            ROOM_FULL:"Комната заполнена"
+            ROOM_FULL:"Комната заполнена",
+            NICKNAME_IS_NOT_ENTERED:"Введите никнейм для входа"
         }
     }
 }
@@ -80,6 +81,7 @@ function connect(){
 
 
 function errorJoin(error){
+    document.getElementById('UpError').remove()
     document.body.insertAdjacentHTML('afterbegin', `
     <div id="UpError">
     <inError>
@@ -121,5 +123,4 @@ function(event) {
         }
     }
 })
-
 
