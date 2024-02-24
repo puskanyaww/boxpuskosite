@@ -81,7 +81,11 @@ function connect(){
 
 
 function errorJoin(error){
-    document.getElementById('UpError').remove()
+    asdasdfk = document.getElementById('UpError')
+    if(asdasdfk){
+        document.getElementById('UpError').remove()
+    }
+
     document.body.insertAdjacentHTML('afterbegin', `
     <div id="UpError">
     <inError>
@@ -99,6 +103,7 @@ function errorJoin(error){
 
 
 function sendAnswer(){
+    
     writeStatur = ""
     socket.emit('taskSend', {taskName: "negr", type: "chaosText", valueInputs: taskplace.value, 'id': id})
     document.getElementById("content").innerHTML = `
