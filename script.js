@@ -37,7 +37,7 @@ function connect(){
         gameName = data.gameName
         roomLocale = data.roomLocale
         document.getElementById("content").innerHTML = `
-        <img class="logo" src="images/${data.gameName}Logo_${data.roomLocale}.svg">
+        <img class="logo" src="logos/${data.gameName}Logo_${data.roomLocale}.svg">
         
         <center>
         <p class="ingameName">${data.name}</p>
@@ -72,7 +72,7 @@ function connect(){
     
         if(data.state == "logo"){
             document.getElementById("content").innerHTML = `
-            <img class="logo" src="images/${gameName}Logo_${roomLocale}.svg">
+            <img class="logo" src="logos/${gameName}Logo_${roomLocale}.svg">
             
             `
         }
@@ -107,7 +107,7 @@ function sendAnswer(){
     writeStatur = ""
     socket.emit('taskSend', {taskName: "negr", type: "chaosText", valueInputs: taskplace.value, 'id': id})
     document.getElementById("content").innerHTML = `
-    <img class="logo" src="images/${gameName}Logo_${roomLocale}.svg">
+    <img class="logo" src="logos/${gameName}Logo_${roomLocale}.svg">
     
     <center>
     <p id="task">Спасибо за ответ. Ожидайте других игроков.</p>
