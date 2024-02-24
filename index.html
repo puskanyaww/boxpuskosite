@@ -12,9 +12,14 @@
     <div class="header"><img src="images/logo.svg"> <h2 class="longName">BOX.PUSKO.SITE</h2><h2 class="shortName">B.P.S</h2></div>
     <input type="text" placeholder="КОД КОМНАТЫ" maxlength="4" id="code">
     <input type="text" placeholder="НИКНЕЙМ" maxlength="12" id="name">
-    <button onclick="connect()">Подключиться</button>
+    <button id="connect" onclick="connect()">Подключиться</button>
     </div>
 </body>
 <script src="https://cdn.socket.io/4.7.4/socket.io.min.js" integrity="sha384-Gr6Lu2Ajx28mzwyVR8CFkULdCU7kMlZ9UthllibdOSo6qAiN+yXNHqtgdTvFXMT4" crossorigin="anonymous"></script>
 <script src="script.js"></script>
+<script>
+    if(localStorage.getItem("nameSave") != undefined){
+document.getElementById("name").value = localStorage.getItem("nameSave")
+}
+</script>
 </html>

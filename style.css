@@ -112,11 +112,82 @@ h3{
     font-size: 130%;
 }
 
+.logo{
+    filter: brightness(-100%);
+}
+
+#code{
+   text-transform:uppercase
+}
+
+.text{
+    text-align: center;
+}
+
+.logo{
+    max-width: 200px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.ingameName{
+    font-weight: 700;
+}
+
+#UpError{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    background: #fdfdfd;
+    padding: 13px;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    box-shadow: 0px 5px 0px #000000a2;
+    animation: showError .2s ease-out;
+
+}
+
+inError{
+    width: 60%;
+    display: flex;
+    margin-right: auto;
+    margin-left: auto;
+    justify-content: space-around;
+}
+
+inError button{
+    padding: 10px;
+    width: 100px;
+}
+
+#UpError div h3, p{
+    margin: 0;
+}
+
+center p{
+    margin: 10px !important;
+}
+
+@keyframes showError {
+    0%{
+        box-shadow: 0px 1px 0px #000000a2;
+        transform: translateY(-100%);
+    }
+    100%{
+        box-shadow: 0px 5px 0px #000000a2;
+        transform: translateY(0%);
+    }
+}
+
 @media screen and (max-width: 600px) and (-webkit-min-device-pixel-ratio: 1){
     body{
         width: calc(100% - 40px);
         height: 100%;
     }
+
 }
 
 @media screen and (max-width: 370px) and (-webkit-min-device-pixel-ratio: 1){
