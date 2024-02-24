@@ -21,5 +21,9 @@
     if(localStorage.getItem("nameSave") != undefined){
 document.getElementById("name").value = localStorage.getItem("nameSave")
 }
+urlParams = new URLSearchParams(window.location.search);
+if(urlParams.get('code') != null){
+    document.getElementById("code").value = urlParams.get('code')
+}
 </script>
 </html>
