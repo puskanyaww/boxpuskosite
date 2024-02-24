@@ -14,7 +14,7 @@ let localization = {
             GAME_STARTED:"Игра уже началась",
             ROOM_FULL:"Комната заполнена",
             NICKNAME_IS_NOT_ENTERED:"Введите никнейм для входа",
-            ZALUPA:"Залупа"
+            ZALUPA:"Залупа Залупа Залупа Залупа Залупа Залупа Залупа Залупа Залупа Залупа Залупа Залупа Залупа Залупа Залупа Залупа Залупа Залупа Залупа Залупа Залупа Залупа"
         }
     }
 }
@@ -64,8 +64,8 @@ function connect(){
         if(data.taskName == "chaosText"){
             document.getElementById("content").innerHTML = `
         <h3 id="task">${data.title}</h3>
-        <input type="text" placeholder="Писать тут" id="taskplace">
-        <button id="sendButton" maxlength="40" onClick="sendAnswer()">Отправить</button>
+        <input type="text" maxlength="40" placeholder="Писать тут" id="taskplace">
+        <button id="sendButton" onClick="sendAnswer()">Отправить</button>
         `
         }
 
