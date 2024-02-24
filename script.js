@@ -13,7 +13,8 @@ let localization = {
             ROOM_NOT_FOUND:"Комната не найдена",
             GAME_STARTED:"Игра уже началась",
             ROOM_FULL:"Комната заполнена",
-            NICKNAME_IS_NOT_ENTERED:"Введите никнейм для входа"
+            NICKNAME_IS_NOT_ENTERED:"Введите никнейм для входа",
+            ZALUPA:"Залупа"
         }
     }
 }
@@ -26,6 +27,10 @@ function connect(){
      socket = io("wss://trgu.ru/", {transports: ['websocket', 'polling', 'flashsocket']});
     const name = document.getElementById("name").value
     const code = document.getElementById("code").value.toUpperCase()
+    if(name == "залупа"){
+        errorJoin("ZALUPA")
+    }
+    
     socket.emit('clientLogin', {name: name, code: code});
     socket.on('youJoined', (data) => {
         connectus = 1
@@ -37,7 +42,7 @@ function connect(){
         gameName = data.gameName
         roomLocale = data.roomLocale
         document.getElementById("content").innerHTML = `
-        <img class="logo" src="./logos/${data.gameName}Logo${data.roomLocale}.svg">
+        <img class="logo" src="logos/${data.gameName}Logo${data.roomLocale}.svg">
         
         <center>
         <p class="ingameName">${data.name}</p>
@@ -60,7 +65,7 @@ function connect(){
             document.getElementById("content").innerHTML = `
         <h3 id="task">${data.title}</h3>
         <input type="text" placeholder="Писать тут" id="taskplace">
-        <button id="sendButton" onClick="sendAnswer()">Отправить</button>
+        <button id="sendButton" maxlength="40" onClick="sendAnswer()">Отправить</button>
         `
         }
 
@@ -72,7 +77,7 @@ function connect(){
     
         if(data.state == "logo"){
             document.getElementById("content").innerHTML = `
-            <img class="logo" src="./logos/${gameName}Logo${roomLocale}.svg">
+            <img class="logo" src="logos/${gameName}Logo${roomLocale}.svg">
             
             `
         }
@@ -107,7 +112,7 @@ function sendAnswer(){
     writeStatur = ""
     socket.emit('taskSend', {taskName: "negr", type: "chaosText", valueInputs: taskplace.value, 'id': id})
     document.getElementById("content").innerHTML = `
-    <img class="logo" src="./logos/${gameName}Logo${roomLocale}.svg">
+    <img class="logo" src="logos/${gameName}Logo${roomLocale}.svg">
     
     <center>
     <p id="task">Спасибо за ответ. Ожидайте других игроков.</p>
