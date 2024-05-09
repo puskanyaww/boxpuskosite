@@ -90,13 +90,20 @@ function errorJoin(error){
     if(asdasdfk){
         document.getElementById('UpError').remove()
     }
+    var black
+    if(localization["ru"]["errors"][error] == undefined){
+        black = error
+    }
+    else{
+        black = localization["ru"]["errors"][error]
+    }
 
     document.body.insertAdjacentHTML('afterbegin', `
     <div id="UpError">
     <inError>
     <div>
     <p>Ошибка</p>
-    <h3>${localization["ru"]["errors"][error]}</h3>
+    <h3>${black}</h3>
     </div>
     <button onclick="document.getElementById('UpError').remove()">
     Агась
