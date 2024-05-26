@@ -9,6 +9,9 @@ let writeStatur = "lobby"
 
 let localization = {
     "ru":{
+    "start": "Начать игру",
+    "group": "Группа",
+    "groupDejoin": "Выйти из группы",
     "errors":{
             ROOM_NOT_FOUND:"Комната не найдена",
             GAME_STARTED:"Игра уже началась",
@@ -47,9 +50,13 @@ function connect(){
         <center>
         <p class="ingameName">${data.name}</p>
         <p id="task">Ожидание начала игры</p>
+        <div id="gameDiv"></div>
+        <div id="forVip"></div>
         </center>
-        
         `
+        isVip()
+        checkGame()
+        dId("forVip").addEventListener("click", () => {req("startGame");})
     })
     socket.on('errorJoin', (data) => {
         connectus = 0
@@ -77,13 +84,52 @@ function connect(){
     
         if(data.state == "logo"){
             document.getElementById("content").innerHTML = `
-            <img class="logo" src="logos/${gameName}Logo${roomLocale}.svg">
-            
-            `
+            <img class="logo" src="logos/${gameName}Logo${roomLocale}.svg">`
         }
     })
-}
 
+    }
+
+    function dId(arg){
+        return document.getElementById(arg)
+    }
+
+    function checkGame(){
+        if(gameName == "2improvisate"){
+           dId("gameDiv").innerHTML = `
+           <div class="impGroups">
+           <div class="group">${Loc("group")} 1</div>
+           <div class="group">${Loc("group")} 2</div>
+           <div class="group">${Loc("group")} 3</div>
+           <div class="group">${Loc("group")} 4</div></div>
+           <button id="dej">${Loc("groupDejoin")}</button>
+        `
+        var el = 0
+        var arr = document.getElementsByClassName("group")
+        while (el != arr.length){
+            console.log(el)
+            const black = el
+            arr[el].addEventListener("click", () => {
+                req("joinGroup", black);
+            })
+
+            el = el +1
+        }
+        dId("dej").addEventListener("click", () => {
+            req("dejoinGroup");
+        })
+        }
+    }
+
+    function isVip(){
+        if(id == 0){
+            dId("forVip").innerHTML = `<button>${Loc("start")}</button>`
+        }
+    }
+
+function Loc(arg){
+    return localization[roomLocale][arg]
+}
 
 function errorJoin(error){
     asdasdfk = document.getElementById('UpError')
@@ -117,7 +163,7 @@ function errorJoin(error){
 function sendAnswer(){
     
     writeStatur = ""
-    socket.emit('taskSend', {taskName: "negr", type: "chaosText", valueInputs: taskplace.value, 'id': id})
+    socket.emit('taskSend', {taskName: "negr", type: "chaosText", valueInputs: taskplace.value})
     document.getElementById("content").innerHTML = `
     <img class="logo" src="logos/${gameName}Logo${roomLocale}.svg">
     
@@ -126,6 +172,11 @@ function sendAnswer(){
     </center>
     
     `
+}
+
+
+function req(todo, data){
+    socket.emit('do', {do:todo, param:data});
 }
 
 
