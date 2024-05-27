@@ -64,20 +64,6 @@ function connect(){
     document.getElementById("connect").textContent = "Подключиться"
         return
     })
-
-    socket.on('task', (data) => {
-        console.log(id)
-        writeStatur = "writingMessage"
-        if(data.taskName == "chaosText"){
-            document.getElementById("content").innerHTML = `
-        <h3 id="task">${data.title}</h3>
-        <input type="text" maxlength="40" placeholder="Писать тут" id="taskplace">
-        <button id="sendButton" onClick="sendAnswer()">Отправить</button>
-        `
-        }
-
-
-    })
     
     
     socket.on('gameState', (data) => {
@@ -118,8 +104,92 @@ function connect(){
         dId("dej").addEventListener("click", () => {
             req("dejoinGroup");
         })
+
+        socket.on('task', (data) => {
+            document.getElementById("content").innerHTML = `
+            <img class="logo" src="logos/${gameName}Logo${roomLocale}.svg"> <center><div id="gameDiv"></div><div id="personalTask"></div></center>`
+            switch(data.taskName){
+                case("improvising"):
+                    improvising(data.title)
+                break;
+                case("improvising2"):
+                    improvising2(data.title)
+                break;
+                case("getReady"):
+                    getReady(data.title)
+                break;
+                case("personalTask"):
+                personalTask(data.title)
+                break;
+            }
+        })
+
+
+
+
         }
     }
+
+
+function improvising(title){
+    var p0 = title[0]
+    var p1 = title[1]
+    var p0name = p0.name
+    var p1name = p1.name
+    var status = ""
+    var status2 = "импровизируют."
+    if(p0.id == id){
+        p0name = "Вы"
+        status = "Приготовьтесь!<br>"
+        status2 = "импровизируете."
+    }
+    if(p1.id == id){
+        p1name = "вы"
+        status = "Приготовьтесь!<br>"
+        status2 = "импровизируете."
+    }
+    dId("gameDiv").innerHTML = `
+            ${status}
+            ${p0name} и ${p1name}
+            ${status2}
+    `
+}
+
+
+function improvising2(title){
+    var p0 = title[0]
+    var p1 = title[1]
+    var p0name = p0.name
+    var p1name = p1.name
+    dId("gameDiv").innerHTML = `
+            ${title[1].prompt}
+            Наблюдайте за представлением!<br>
+            ${p0name} и ${p1name}<br>
+            ипровизируют.
+    `
+}
+
+function getReady(title){
+    dId("gameDiv").innerHTML = `
+            ${title[0]}<br>
+            Персональное задание:
+            ${title[1]}<br>
+    `
+}
+
+function personalTask(title){
+    dId("gameDiv").innerHTML = `
+            ${title[0]}<br>
+            Персональное задание:
+            ${title[1]}<br>
+    `
+}
+
+
+
+
+
+
 
     function isVip(){
         if(id == 0){
